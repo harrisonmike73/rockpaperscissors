@@ -6,7 +6,7 @@
  
             // Asks the user to input rock, paper, or scissors and returns answer to lower case.
         
-            let playerSelection = prompt("Do you choose Rock, Paper or scissors?").toLowerCase();
+            //let playerSelection = prompt("Do you choose Rock, Paper or scissors?").toLowerCase();
     
             // generates random number between 0-2. Uses 'const choices' to return rock, paper, or scissors.
         function computerSelection() {
@@ -16,6 +16,7 @@
 
          function playRound (playerSelection, computerSelection) 
          {
+            playerSelection = prompt("Do you choose Rock, Paper or scissors?").toLowerCase();
              // rock logic
 
                 if (playerSelection == "rock" && computerSelection == "rock") {
@@ -51,17 +52,19 @@
          
                 }
            
-         if (playerScore = 5) {
-         alert("You win the game!");}
-         else if (computerScore = 5) {
-             alert("You lose.. better luck next time.")
-         }
-
-            function game() {
-                
-            }
          
-         console.log(playRound(playerSelection, computerSelection()));
+            function game() {
+                for (let i = 0; i < 5; i++) {
+                    playRound()
+                    if (playerScore = 5) {
+                        alert("You win the game!");}
+                        else if (computerScore = 5) {
+                        alert("You lose.. better luck next time.")
+                        }
+                } 
+            }
+         game();
+         console.log(playRound( computerSelection()));
                 
                 
 
