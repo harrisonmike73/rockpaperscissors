@@ -9,59 +9,79 @@
             //let playerSelection = prompt("Do you choose Rock, Paper or scissors?").toLowerCase();
     
             // generates random number between 0-2. Uses 'const choices' to return rock, paper, or scissors.
-        function computerSelection() {
+        function computerSelection() 
+        {
            return choices [Math.floor(Math.random()* 3)];
         }
 
 
-         function playRound ( computerSelection) {
+         function playRound ( computerSelection) 
+         {
          //console.log(playerSelection, computerSelection)
          
-            playerSelection = prompt("Do you choose Rock, Paper or scissors?").toLowerCase();
+            playerSelection = prompt("Do you choose Rock, Paper or Scissors?").toLowerCase();
              // rock logic
              console.log(playerSelection, computerSelection)
                 if (playerSelection == "rock" && computerSelection == "rock") {
-                    alert ("It\'s a draw!");
+                    return alert ("It\'s a draw!");
                 } else if (playerSelection == "rock" && computerSelection == "paper") {
-                    alert ("You lose! Paper covers rock!")
                     computerScore += 1;
+                    return alert ("You lose! Paper covers rock!")
+                    
                 } else if (playerSelection == "rock" && computerSelection == "scissors") {
-                    alert ("You win! Rock smashes scissors!")
-                    playerScore += 1; 
+                    playerScore += 1;
+                    return alert ("You win! Rock smashes scissors!")
+                     
                 }
             // paper logic
                 if (playerSelection == "paper" && computerSelection == "paper") {
-                    alert ("It\'s a draw!");
+                    return alert ("It\'s a draw!");
                 } else if (playerSelection == "paper" && computerSelection == "rock") {
-                    alert ("You win! Paper covers rock!")
                     playerScore += 1; 
+                    return alert ("You win! Paper covers rock!")
+                    
                 } else if (playerSelection == "paper" && computerSelection == "scissors") {
-                    alert ("You lose! Scissors cuts paper!")
                     computerScore += 1;
+                    return alert ("You lose! Scissors cuts paper!")
+                    
                 }
             // scissors logic
                 if (playerSelection == "scissors" && computerSelection == "scissors") {
-                    alert ("It\'s a draw!"); 
+                    return alert ("It\'s a draw!"); 
                 }  else if (playerSelection == "scissors" && computerSelection == "rock") {
-                    alert ("You lose! Rock smashes scissors!")
                     computerScore += 1; 
+                    return alert ("You lose! Rock smashes scissors!")
+                    
                 }  else if (playerSelection == "scissors" && computerSelection == "paper") {
-                    alert ("You win! Scissors cuts paper!")
                     playerScore += 1;
+                    return alert ("You win! Scissors cuts paper!")
+                    
                 }   
-                    else alert ("Something went wrong. Please try again.");
-         
+                else {
+                    return console.log("Incorrect Input")
                 }
+            
+            }
+            
+
            
          //check to see who has the most wins or if it is equal and if someone wins all 5.
-            function game() {
-                for (let i = 0; i < 5; i++) {
+            function game() 
+            {
+                for (let i = 0; i <= 4; i++) {
                     playRound( computerSelection())
-                 if (playerScore == 5) {
-                        alert("You win the game!");}
-                        else if (computerScore == 5) {
-                        alert("You lose.. better luck next time.")
+                 if (playerScore == 3) {
+                        return alert("You win the game!");
+                    }
+
+                    else if (computerScore == 3) {
+                        return alert("You lose.. better luck next time.")
                         }
+                else if(i === 4)
+                {
+                    return alert("End of Five Rounds. Player Score: " + playerScore + " Computer Score: " + computerScore )
+                }
+                
                 } 
             }
          game();
